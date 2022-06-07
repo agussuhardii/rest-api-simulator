@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    hikari:
+      maxLifetime: 3000000
+      connectionTimeout: 60000
+      minimumIdle: 2
+      poolName: SpringBootJPAHikariCP
+      leak-detection-threshold: 60000
+      idleTimeout: 60000
+      maximumPoolSize: 4
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password:
+    username: root
+    url: jdbc:mysql://localhost:3306/rest_db?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Asia/Jakarta
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+  jpa:
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+  devtools:
+    restart:
+      exclude: static/**,templates/**
+server:
+  port: 10000
